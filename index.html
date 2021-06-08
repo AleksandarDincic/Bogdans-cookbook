@@ -19,14 +19,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-image: url(bg.jpg); background-repeat: no-repeat;
-background-attachment: fixed;
-background-size:100% 100%;">
-    <nav class="navbar navbar-light d-none d-sm-block" style="background-color: white;">
+<body>
+    <nav class="navbar navbar-light d-none d-sm-block bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="bogdan.png" alt="" style="width: 50px; height: 50px;">
+            <a class="navbar-brand" href="#"><img src="img/bogdan.png" class="brand-img">
                 Bogdanov Kuvar
             </a>
         </div>
@@ -34,8 +33,7 @@ background-size:100% 100%;">
     </nav>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand d-inline d-sm-none" href="#"><img src="bogdan.png" alt=""
-                    style="width: 50px; height: 50px;">
+            <a class="navbar-brand d-inline d-sm-none" href="#"><img src="img/bogdan.png" class = "brand-img">
                 Bogdanov Kuvar
             </a>
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
@@ -75,7 +73,7 @@ background-size:100% 100%;">
         </div>
     </nav>
 
-    <div class="container" style="background-color: rgba(0, 0, 0, 0.6); color: black;">
+    <div class="container content">
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
                 <nav aria-label="breadcrumb">
@@ -88,13 +86,13 @@ background-size:100% 100%;">
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-                <h1 style="color: white; text-decoration: underline;">Aktuelnosti:</h1>
+            <div class="col-lg-10 offset-lg-1 white-line">
+                <h1>Aktuelnosti:</h1>
             </div>
-            
-            <div class="col-lg-5 offset-lg-1" style="margin-bottom: 10px;">
+
+            <div class="col-lg-5 offset-lg-1 news-card">
                 <div class="card">
-                    <img src="trump.jpg" class="card-img-top" alt="..." style="height: 300px; object-fit: cover;">
+                    <img src="img/trump.jpg" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Tramp probao Bogdanov recept</h5>
                         <p class="card-text">Najeo se ko stoka</p>
@@ -102,9 +100,9 @@ background-size:100% 100%;">
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5" style="margin-bottom: 10px;">
+            <div class="col-lg-5 news-card">
                 <div class="card">
-                    <img src="obama.jpg" class="card-img-top" alt="..." style="height: 300px; object-fit: cover;">
+                    <img src="img/obama.jpg" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Obama probao Bogdanov recept</h5>
                         <p class="card-text">Najeo se ko stoka</p>
@@ -112,9 +110,9 @@ background-size:100% 100%;">
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 offset-lg-1" style="margin-bottom: 10px;">
+            <div class="col-lg-5 offset-lg-1 news-card">
                 <div class="card">
-                    <img src="beach.jpg" class="card-img-top" alt="..." style="height: 300px; object-fit: cover;">
+                    <img src="img/beach.jpg" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Bogdan otisao da pliva</h5>
                         <p class="card-text">Udavio se</p>
@@ -122,9 +120,9 @@ background-size:100% 100%;">
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5" style="margin-bottom: 10px;">
+            <div class="col-lg-5 news-card">
                 <div class="card">
-                    <img src="hanakin.png" class="card-img-top" alt="..." style="height: 300px; object-fit: cover;">
+                    <img src="img/hanakin.png" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">Joe Biden</h5>
                         <p class="card-text">Joe Biden</p>
@@ -134,27 +132,31 @@ background-size:100% 100%;">
             </div>
         </div>
         <div class="row">
-            
-            <div class="col-lg-10 offset-lg-1">                
-                <h1 style="color: white; text-decoration: underline;">Best recipes ever:</h1>
+
+            <div class="col-lg-10 offset-lg-1 white-line">
+                <h1>Best recipes ever:</h1>
+                
+            </div>
+
+            <div class="col-lg-10 offset-lg-1">
                 <div class="card mb-3 mt-3">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="chicken.jpg" class="card-img" alt="..." style="height: 150px; object-fit: cover;">
+                            <img src="img/chicken.jpg" class="card-img recipe-img">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <div style="float: left;">
+                                <div class="recipe-left">
                                     <h1 class="card-title">Pileća krilca</h1>
                                     <h5 class="card-text">Nikola Dajić</h5>
                                     <p class="card-text text-muted">Glavno jelo</p>
                                 </div>
-                                <div style="text-align: right;">
-                                    <p class="card-text" style="font-size: 18px;"><i class="fas fa-star"></i>
+                                <div class="recipe-right">
+                                    <p class="card-text"><i class="fas fa-star"></i>
                                         &nbsp; 5.0/5.0</p>
-                                    <p class="card-text" style="font-size: 18px;"><i class="fas fa-clock"></i> &nbsp; 4h
+                                    <p class="card-text"><i class="fas fa-clock"></i> &nbsp; 4h
                                     </p>
-                                    <p class="card-text" style="font-size: 18px;"><i class="fas fa-book-dead"></i>
+                                    <p class="card-text"><i class="fas fa-book-dead"></i>
                                         &nbsp; 4/5</p>
                                 </div>
                             </div>
@@ -164,21 +166,21 @@ background-size:100% 100%;">
                 <div class="card mb-3 mt-3">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="chicken.jpg" class="card-img" alt="..." style="height: 150px; object-fit: cover;">
+                            <img src="img/chicken.jpg" class="card-img recipe-img">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <div style="float: left;">
+                                <div class="recipe-left">
                                     <h1 class="card-title">Pileća krilca</h1>
                                     <h5 class="card-text">Nikola Dajić</h5>
                                     <p class="card-text text-muted">Glavno jelo</p>
                                 </div>
-                                <div style="text-align: right;">
-                                    <p class="card-text" style="font-size: 18px;"><i class="fas fa-star"></i>
+                                <div class="recipe-right">
+                                    <p class="card-text"><i class="fas fa-star"></i>
                                         &nbsp; 5.0/5.0</p>
-                                    <p class="card-text" style="font-size: 18px;"><i class="fas fa-clock"></i> &nbsp; 4h
+                                    <p class="card-text"><i class="fas fa-clock"></i> &nbsp; 4h
                                     </p>
-                                    <p class="card-text" style="font-size: 18px;"><i class="fas fa-book-dead"></i>
+                                    <p class="card-text"><i class="fas fa-book-dead"></i>
                                         &nbsp; 4/5</p>
                                 </div>
                             </div>
@@ -188,21 +190,21 @@ background-size:100% 100%;">
                 <div class="card mb-3 mt-3">
                     <div class="row no-gutters">
                         <div class="col-md-4">
-                            <img src="chicken.jpg" class="card-img" alt="..." style="height: 150px; object-fit: cover;">
+                            <img src="img/chicken.jpg" class="card-img recipe-img">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <div style="float: left;">
+                                <div class="recipe-left">
                                     <h1 class="card-title">Pileća krilca</h1>
                                     <h5 class="card-text">Nikola Dajić</h5>
                                     <p class="card-text text-muted">Glavno jelo</p>
                                 </div>
-                                <div style="text-align: right;">
-                                    <p class="card-text" style="font-size: 18px;"><i class="fas fa-star"></i>
+                                <div class="recipe-right">
+                                    <p class="card-text"><i class="fas fa-star"></i>
                                         &nbsp; 5.0/5.0</p>
-                                    <p class="card-text" style="font-size: 18px;"><i class="fas fa-clock"></i> &nbsp; 4h
+                                    <p class="card-text"><i class="fas fa-clock"></i> &nbsp; 4h
                                     </p>
-                                    <p class="card-text" style="font-size: 18px;"><i class="fas fa-book-dead"></i>
+                                    <p class="card-text"><i class="fas fa-book-dead"></i>
                                         &nbsp; 4/5</p>
                                 </div>
                             </div>
@@ -210,8 +212,6 @@ background-size:100% 100%;">
                     </div>
                 </div>
             </div>
-
-
         </div>
 
     </div>
@@ -219,7 +219,7 @@ background-size:100% 100%;">
     <div class="container-fluid bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-12" style="text-align: center; font-style: italic;">
+                <div class="col-12 footer">
                     Copyright 2021 nikola mehovic i dinca etf idk
                 </div>
             </div>
