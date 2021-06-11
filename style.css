@@ -29,13 +29,15 @@ body{
 }
 
 .news-card img{
-    height: 300px;
+    height: 280px;
     object-fit: cover;
+    padding: 10px;
 }
 
 .recipe-img{
     height: 150px;
     object-fit: cover;
+    padding: 5px;
 }
 
 .recipe-left{
