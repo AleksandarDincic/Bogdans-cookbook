@@ -12,6 +12,7 @@ body{
 .content{
     background-color: white;
     color: black;
+    min-height: 90vh;
 }
 
 .white-line{
@@ -42,6 +43,10 @@ body{
 
 .recipe-left{
     float: left;
+}
+
+.recipe-left button{
+    margin-top: -5px;
 }
 
 .recipe-right{
