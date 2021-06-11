@@ -19,13 +19,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <nav class="navbar navbar-light d-none d-sm-block bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="img/bogdan.png" class="brand-img">
+            <a class="navbar-brand" href="#"><img src="../img/bogdan.png" class="brand-img">
                 Bogdanov Kuvar
             </a>
         </div>
@@ -33,7 +33,7 @@
     </nav>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand d-inline d-sm-none" href="#"><img src="img/bogdan.png" class="brand-img">
+            <a class="navbar-brand d-inline d-sm-none" href="#"><img src="../img/bogdan.png" class = "brand-img">
                 Bogdanov Kuvar
             </a>
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
@@ -85,57 +85,34 @@
                 </nav>
             </div>
         </div>
-
         <div class="row">
-            <div class="col-lg-10 offset-lg-1 white-line">
-                <h1>Moji recepti</h1>
-            </div>
-
-            <div class="col-lg-10 offset-lg-1"  id="recipes-col">
+            <div>
+                <select>
+                    <option value="0" selected>Ocena</option>
+                    <option value="1" >Tezina</option>
+                </select>
             </div>
         </div>
-
         <div class="row">
-            <div class="col-lg-10 offset-lg-1 white-line">
-                <h1>Moje ocene</h1>
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1 white-line">
+                    <h1>Best recipes ever</h1>
+                </div>
+                <div class="col-lg-10 offset-lg-1" id="recipes-col">
+                    
+                </div>
             </div>
-
-            <div class="col-lg-10 offset-lg-1" id="ratings-col">
-            </div>
+            <nav class="arrows" aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li id="allBack" class="page-item"><a class="page-link" href="#">&Lt;</a></li>
+                  <li id="back" class="page-item"><a class="page-link" href="#">&LT;</a></li>
+                  <li class="page-item"><a id="curr" class="page-link" href="#">1</a></li>
+                  <li id="next" class="page-item"><a class="page-link" href="#">&GT;</a></li>
+                  <li id="allNext" class="page-item"><a class="page-link" href="#">&Gt;</a></li>
+                </ul>
+              </nav>
         </div>
 
-        <div class="row" style="padding-bottom: 10px;">
-            <div class="col-lg-10 offset-lg-1 white-line">
-                <h1>Moji komentari</h1>
-            </div>
-
-            <div class="col-lg-10 offset-lg-1">
-                <div style="margin-bottom: 10px;">
-                    <div style="border-bottom: 1px solid lightgray">
-                        <p style="margin-bottom: 0px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aperiam nisi illo rerum nostrum soluta minus ipsa omnis. Ut unde rerum praesentium quas quae dicta voluptatum animi cumque rem vero ratione itaque sed consequatur ab maxime, nesciunt quis, beatae cupiditate ducimus a soluta nobis possimus autem laboriosam? Veritatis, ipsam blanditiis!</p>
-                    </div>
-                    <div style=" font-style: italic;" class="text-muted">
-                        Pileca krilca, 05/06/2021
-                    </div>
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <div style="border-bottom: 1px solid lightgray">
-                        <p style="margin-bottom: 0px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aperiam nisi illo rerum nostrum soluta minus ipsa omnis. Ut unde rerum praesentium quas quae dicta voluptatum animi cumque rem vero ratione itaque sed consequatur ab maxime, nesciunt quis, beatae cupiditate ducimus a soluta nobis possimus autem laboriosam? Veritatis, ipsam blanditiis!</p>
-                    </div>
-                    <div style=" font-style: italic;" class="text-muted">
-                        Pileca krilca, 05/06/2021
-                    </div>
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <div style="border-bottom: 1px solid lightgray">
-                        <p style="margin-bottom: 0px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aperiam nisi illo rerum nostrum soluta minus ipsa omnis. Ut unde rerum praesentium quas quae dicta voluptatum animi cumque rem vero ratione itaque sed consequatur ab maxime, nesciunt quis, beatae cupiditate ducimus a soluta nobis possimus autem laboriosam? Veritatis, ipsam blanditiis!</p>
-                    </div>
-                    <div style="font-style: italic;" class="text-muted">
-                        Pileca krilca, 05/06/2021
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="container-fluid bg-light">
@@ -161,8 +138,9 @@
         </div>
 
     </div>
-    <script src="js/data.js"></script>
-    <script src="js/moj_nalog.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/helperBoy.js"></script>
+    <script src="../js/recepti.js"></script>
 </body>
 
 </html>

@@ -58,3 +58,8 @@ body{
     font-style: italic;
     text-align: center;
 }
+
+.arrows{
+    display: flex;
+    justify-content: center;
+}
