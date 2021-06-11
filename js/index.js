@@ -86,19 +86,19 @@ function appendRecipeCard(recipe) {
     let rating = $("<p></p>").addClass("card-text");
     let ratingIcon = $("<i></i>").addClass("fas").addClass("fa-star");
     let avg = getAvg(recipe);
-    rating.append(avg.toFixed(1) + "/5.0" + "&nbsp;");
+    rating.append(avg.toFixed(1) + "/5.0" + "&nbsp;&nbsp;");
     rating.append(ratingIcon);
     recipeRight.append(rating);
 
     let time = $("<p></p>").addClass("card-text");
     let timeIcon = $("<i></i>").addClass("fas").addClass("fa-clock");
-    time.append(recipe.time + "&nbsp;");
+    time.append(recipe.time + "&nbsp;&nbsp;");
     time.append(timeIcon);
     recipeRight.append(time);
 
     let difficulty = $("<p></p>").addClass("card-text");
     let diffIcon = $("<i></i>").addClass("fas").addClass("fa-book-dead");
-    difficulty.append(recipe.difficulty + "/5" + "&nbsp;");
+    difficulty.append(recipe.difficulty + "/5" + "&nbsp;&nbsp;");
     difficulty.append(diffIcon);
     recipeRight.append(difficulty);
 
