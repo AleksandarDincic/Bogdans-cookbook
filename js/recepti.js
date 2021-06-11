@@ -9,7 +9,8 @@ function displayContent(recipes, type, pageNum)
         if(displayNumber < (numberPerPage * pageNum) && displayNumber >= (numberPerPage * (pageNum-1)))
             appendRecipeCard(element, "RS");
         displayNumber++;
-    }); 
+    });
+    $("#curr").html(pageNum);
 }
 
 function sortRecipes(recipes, sortBy)
@@ -28,7 +29,7 @@ function sortRecipes(recipes, sortBy)
             });
         break;
         case 1:
-            recipes.sort((element1, element2) => element2["difficulty"] - element1["difficulty"]);
+            recipes.sort((element1, element2) => element1["difficulty"] - element2["difficulty"]);
         break;
     }
 }
@@ -40,32 +41,30 @@ $(document).ready(function(){
     let type = params.get("type");
     let pageNum = 1;
     let sortBy = 0;
-    let currRecipes = recipes.filter(element=> element["type"] == type);
+    let textFilter = "";
+    let currRecipes = recipes.filter(element=>element["type"] == type && element["name"].includes(textFilter));
+    $(".breadcrumb").append("<li class='breadcrumb-item active'><a href='#'>" + types[type]["nameSRBP"] + "</a></li>");
     sortRecipes(currRecipes, sortBy);
     displayContent(currRecipes, type, pageNum);
 
     $("#allBack").click(function(){
         pageNum = 1;
         $("#recipes-col").html("");
-        $("#curr").html(pageNum);
         displayContent(currRecipes, type, pageNum);
     });
     $("#back").click(function(){
         pageNum = (pageNum - 1) > 0 ? (pageNum - 1) : pageNum;
         $("#recipes-col").html("");
-        $("#curr").html(pageNum);
         displayContent(currRecipes, type, pageNum);
     });
     $("#next").click(function(){
         pageNum = (pageNum + 1) <= Math.ceil(currRecipes.length/numberPerPage) ? (pageNum + 1) : pageNum;
         $("#recipes-col").html("");
-        $("#curr").html(pageNum);
         displayContent(currRecipes, type, pageNum);
     });
     $("#allNext").click(function(){
         pageNum = Math.ceil(currRecipes.length/numberPerPage);
         $("#recipes-col").html("");
-        $("#curr").html(pageNum);
         displayContent(currRecipes, type, pageNum);
     });
 
@@ -73,6 +72,15 @@ $(document).ready(function(){
         sortBy = parseInt($(this).val());
         sortRecipes(currRecipes, sortBy);
         $("#recipes-col").html("");
+        displayContent(currRecipes, type, pageNum);
+    });
+
+    $("#search").click(function(){
+        textFilter = $("#searchText").val();
+        currRecipes = recipes.filter(element=>element["type"] == type && element["name"].includes(textFilter));
+        sortRecipes(currRecipes, sortBy);
+        $("#recipes-col").html("");
+        pageNum = 1;
         displayContent(currRecipes, type, pageNum);
     });
 });

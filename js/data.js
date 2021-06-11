@@ -17,22 +17,26 @@ var types=[
     {
         id:0,
         nameSRB:"Predjelo",
-        nameENG:""
+        nameENG:"",
+        nameSRBP:"Predjela"
     },
     {
         id:1,
         nameSRB:"Glavno jelo",
-        nameENG:""
+        nameENG:"",
+        nameSRBP:"Glavna jela"
     },
     {
         id:2,
-        nameSRB:"Dezert",
-        nameENG:""
+        nameSRB:"Desert",
+        nameENG:"",
+        nameSRBP:"Deserti"
     },
     {
         id:3,
         nameSRB:"Uzina",
-        nameENG:""
+        nameENG:"",
+        nameSRBP:"Uzina"
     }    
 ]
 
@@ -179,7 +183,7 @@ var data=[
     },
     {
         id:7,
-        name:"name7",
+        name:"name6",
         author:1,
         grade:[{
             userID:1,

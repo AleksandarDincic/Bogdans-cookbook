@@ -79,14 +79,20 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Početna</a></li>
-                        <li class="breadcrumb-item active"><a href="#">Idk put it here</a></li>
                     </ol>
                 </nav>
             </div>
         </div>
         <div class="row">
-            <div>
-                <select>
+            <div class="col-9 col-lg-7 offset-lg-1">
+                <input id="searchText" class="w-100 h-100" type="text" placeholder="Pretraga">
+            </div>
+            <div class="col-1">
+                <button id="search" class="btn button-bogdan">Pretrazi</button>
+            </div>
+            <div class="col-xl-2 offset-lg-1 offset-xl-0 mt-3 mt-xl-0">
+                Sortiraj po:&nbsp;
+                <select class="h-100">
                     <option value="0" selected>Ocena</option>
                     <option value="1" >Tezina</option>
                 </select>
