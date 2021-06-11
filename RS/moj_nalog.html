@@ -58,10 +58,10 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Dodaj recept</a>
+                        <a class="nav-link" href="dodaj.html" tabindex="-1" aria-disabled="true">Dodaj recept</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">O nama</a>
+                        <a class="nav-link" href="o_nama.html" tabindex="-1" aria-disabled="true">O nama</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -108,43 +108,7 @@
                 <h1>Moji komentari</h1>
             </div>
 
-            <div class="col-lg-10 offset-lg-1">
-                <div style="margin-bottom: 10px;">
-                    <div style="border-bottom: 1px solid lightgray">
-                        <p style="margin-bottom: 0px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Necessitatibus aperiam nisi illo rerum nostrum soluta minus ipsa omnis. Ut unde rerum
-                            praesentium quas quae dicta voluptatum animi cumque rem vero ratione itaque sed consequatur
-                            ab maxime, nesciunt quis, beatae cupiditate ducimus a soluta nobis possimus autem
-                            laboriosam? Veritatis, ipsam blanditiis!</p>
-                    </div>
-                    <div style=" font-style: italic;" class="text-muted">
-                        Pileca krilca, 05/06/2021
-                    </div>
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <div style="border-bottom: 1px solid lightgray">
-                        <p style="margin-bottom: 0px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Necessitatibus aperiam nisi illo rerum nostrum soluta minus ipsa omnis. Ut unde rerum
-                            praesentium quas quae dicta voluptatum animi cumque rem vero ratione itaque sed consequatur
-                            ab maxime, nesciunt quis, beatae cupiditate ducimus a soluta nobis possimus autem
-                            laboriosam? Veritatis, ipsam blanditiis!</p>
-                    </div>
-                    <div style=" font-style: italic;" class="text-muted">
-                        Pileca krilca, 05/06/2021
-                    </div>
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <div style="border-bottom: 1px solid lightgray">
-                        <p style="margin-bottom: 0px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Necessitatibus aperiam nisi illo rerum nostrum soluta minus ipsa omnis. Ut unde rerum
-                            praesentium quas quae dicta voluptatum animi cumque rem vero ratione itaque sed consequatur
-                            ab maxime, nesciunt quis, beatae cupiditate ducimus a soluta nobis possimus autem
-                            laboriosam? Veritatis, ipsam blanditiis!</p>
-                    </div>
-                    <div style="font-style: italic;" class="text-muted">
-                        Pileca krilca, 05/06/2021
-                    </div>
-                </div>
+            <div class="col-lg-10 offset-lg-1" id="comment-col">
             </div>
         </div>
     </div>
@@ -155,7 +119,7 @@
                 <div class="col-4">
                     <h2>Also visit</h2>
                     <br>
-                    <a href="https://tower-of-bogdan.vercel.app/">Tower of Bogdan</a>
+                    <a href="https://tower-of-bogdan.vercel.app/" target="_blank">Tower of Bogdan</a>
                 </div>
             </div>
         </div>
@@ -172,6 +136,24 @@
         </div>
 
     </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" data-recipe="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Brisanje recepta</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              Da li sigurno želite da uklonite recept?
+            </div>
+            <div class="modal-footer">
+              <button type="button" id ="btn-delete" class="btn btn-danger">Ukloni</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <script src="../js/data.js"></script>
     <script src="../js/helperBoy.js"></script>
     <script src="../js/moj_nalog.js"></script>

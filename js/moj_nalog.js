@@ -1,8 +1,18 @@
 $(document).ready(function () {
-    getTop3Recipes();
+    initPageContent();
+    $("#btn-delete").click(deleteRecipe);
 });
 
-function getTop3Recipes() {
+function initPageContent() {
+    $("#recipes-col").html("");
+    $("#ratings-col").html("");
+    $("#comment-col").html("");
+    getUserRecipes();
+    getUserRatings();
+    getUserComments();
+}
+
+function getRecipes() {
     let recipes = [];
     let storedRecipes = localStorage.getItem("recipes");
     if (storedRecipes == null) {
@@ -13,16 +23,51 @@ function getTop3Recipes() {
         recipes = JSON.parse(storedRecipes);
     }
 
-    recipes.sort((e1, e2) => {
-        let avg1 = getAvg(e1);
+    return recipes;
+}
 
-        let avg2 = getAvg(e2);
+function getUserRecipes() {
+    let recipes = getRecipes();
 
-        return -(avg1 - avg2);
-    });
+    let myRecipes = recipes.filter(e => e.author == 0);
 
-    for (let i = 0; i < recipes.length && i < 3; ++i) {
-        appendRecipeCard(recipes[i],"RS", "user");
-        appendRecipeCard(recipes[i], "RS", "rating");
+    for (let i = 0; i < myRecipes.length; ++i) {
+        appendRecipeCard(myRecipes[i], "RS", "user");
     }
+}
+
+function getUserRatings() {
+    let recipes = getRecipes();
+
+    let ratedRecipes = recipes.filter(e => e.grade.some(ee => ee.userID == 0));
+
+    for (let i = 0; i < ratedRecipes.length; ++i) {
+        appendRecipeCard(ratedRecipes[i], "RS", "rating");
+    }
+}
+
+function getUserComments() {
+    let recipes = getRecipes();
+
+    let commentedRecipes = recipes.filter(e => e.comments.some(ee => ee.userID == 0));
+    console.log(commentedRecipes.length);
+    commentedRecipes.forEach(e => {
+        let userComments = e.comments.filter(ee => ee.userID == 0);
+        userComments.forEach(ee => appendComment(ee, e.name));
+    });
+}
+
+function deleteRecipe() {
+    let id = $("#deleteModal").attr("data-recipe");
+
+    if (id != -1) {
+        let recipes = getRecipes();
+        recipes = recipes.filter(e => e.id != id);
+
+        localStorage.setItem("recipes", JSON.stringify(recipes));
+
+        initPageContent();
+    }
+
+    $("#deleteModal").modal('hide');
 }

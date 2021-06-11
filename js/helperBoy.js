@@ -26,8 +26,11 @@ function appendRecipeCard(recipe, lang, cardType) {
     let imgCol = $("<div></div>").addClass("col-md-4");
     innerRow.append(imgCol);
 
+    let imgLink = $("<a href =recept.html?id="+recipe["id"]+"></a>");
+    imgCol.append(imgLink);
+
     let img = $("<img></img>").addClass("card-img").addClass("recipe-img").attr("src", "../img/chicken.jpg");
-    imgCol.append(img);
+    imgLink.append(img);
 
     let bodyCol = $("<div></div>").addClass("col-md-8");
     innerRow.append(bodyCol);
@@ -38,7 +41,9 @@ function appendRecipeCard(recipe, lang, cardType) {
     let recipeLeft = $("<div></div>").addClass("recipe-left");
     cardBody.append(recipeLeft);
 
+    let titleLink = $("<a href =recept.html?id="+recipe["id"]+"></a>").addClass("text-reset").addClass("text-decoration-none");
     let recipeName = $("<h1></h1>").addClass("card-title").html(recipe.name);
+    titleLink.append(recipeName);
     let type = getRecipeType(recipe.type);
     let recipeType = $("<p></p>").addClass("card-text").addClass("text-muted").html(lang == "RS" ? type.nameSRB : type.nameENG);
 
@@ -47,21 +52,32 @@ function appendRecipeCard(recipe, lang, cardType) {
     if (cardType != undefined) {
         switch (cardType) {
             case "user":
-                let removeButton = $("<button></button>").addClass("btn").addClass("btn-danger").html("Ukloni");
-
-                recipeLeft.append(recipeName);
+                let removeButton = $("<button></button>").attr("data-recipe", recipe.id).addClass("btn").addClass("btn-danger").html("Ukloni");
+                removeButton.click(function () {
+                    $("#deleteModal").attr("data-recipe", recipe.id).modal('show');
+                });
+                recipeLeft.append(titleLink);
                 recipeLeft.append(recipeType);
                 recipeLeft.append(removeButton);
 
                 target = "#recipes-col";
                 break;
             case "rating":
-                let myRating = $("<h5></h5>").addClass("card-text").html("<i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i><i class='fas fa-star'></i>");
-                
-                recipeLeft.append(recipeName);
-                recipeLeft.append(myRating);
+                let myRatingHtml = $("<h5></h5>").addClass("card-text");
+
+                let myRating = recipe.grade.find(e => e.userID == 0).grade;
+                let cnt;
+                for (cnt = 0; cnt < myRating; ++cnt) {
+                    myRatingHtml.append($("<i class='fas fa-star'></i>"));
+                }
+                for (; cnt < 5; ++cnt) {
+                    myRatingHtml.append($("<i class='far fa-star'></i>"));
+                }
+
+                recipeLeft.append(titleLink);
+                recipeLeft.append(myRatingHtml);
                 recipeLeft.append(recipeType);
-                
+
                 target = "#ratings-col";
                 break;
         }
@@ -70,7 +86,7 @@ function appendRecipeCard(recipe, lang, cardType) {
         let author = getUserName(recipe.author);
         let recipeAuthor = $("<h5></h5>").addClass("card-text").html(author.name);
 
-        recipeLeft.append(recipeName);
+        recipeLeft.append(titleLink);
         recipeLeft.append(recipeAuthor);
         recipeLeft.append(recipeType);
 
@@ -101,4 +117,44 @@ function appendRecipeCard(recipe, lang, cardType) {
     recipeRight.append(difficulty);
 
     $(target).append(card);
+}
+
+/*
+                <div class="comment">
+                    <div class="comment-body">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Necessitatibus aperiam nisi illo rerum nostrum soluta minus ipsa omnis. Ut unde rerum
+                            praesentium quas quae dicta voluptatum animi cumque rem vero ratione itaque sed consequatur
+                            ab maxime, nesciunt quis, beatae cupiditate ducimus a soluta nobis possimus autem
+                            laboriosam? Veritatis, ipsam blanditiis!</p>
+                    </div>
+                    <div class="comment-details text-muted">
+                        <a href="#">Pileca krilca</a>, 05/06/2021
+                    </div>
+                </div>
+ */
+
+function appendComment(comment, recipeName) {
+    let commentDiv = $("<div class='comment'></div");
+
+
+    let commentBody = $("<div class='comment-body'></div>");
+    commentDiv.append(commentBody);
+    
+    let commentBodyP = $("<p></p>").html(comment.text);
+    commentBody.append(commentBodyP);
+
+    let commentDetails = $("<div class='comment-details text-muted'></div>");
+    commentDiv.append(commentDetails);
+
+    if (recipeName != undefined) {
+        let recipeUrl = $("<a href='#'></a>").html(recipeName);
+        commentDetails.append(recipeUrl).append(", " + comment.date);
+    }
+    else {
+        let user = getUserName(comment.userID);
+        commentDetails.append(user + ", " + comment.data);
+    }
+
+    $("#comment-col").append(commentDiv);
 }

@@ -19,13 +19,7 @@ function sortRecipes(recipes, sortBy)
     {
         case 0:
             recipes.sort((element1, element2) =>{
-                let tmpBr1 = 0;
-                let tmpBr2 = 0;
-                element1["grade"].forEach(element =>{ tmpBr1 += element["grade"]});
-                tmpBr1 /= element1["grade"].length;
-                element2["grade"].forEach(element =>{ tmpBr2 += element["grade"]});
-                tmpBr2 /= element2["grade"].length;
-                return tmpBr2 - tmpBr1;
+                return getAvg(element2) - getAvg(element1);
             });
         break;
         case 1:
