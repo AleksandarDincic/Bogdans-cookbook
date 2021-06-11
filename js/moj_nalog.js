@@ -53,7 +53,7 @@ function getUserComments() {
     console.log(commentedRecipes.length);
     commentedRecipes.forEach(e => {
         let userComments = e.comments.filter(ee => ee.userID == 0);
-        userComments.forEach(ee => appendComment(ee, e.name));
+        userComments.forEach(ee => appendComment(ee, e));
     });
 }
 

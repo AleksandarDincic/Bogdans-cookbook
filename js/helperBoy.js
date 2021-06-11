@@ -29,7 +29,7 @@ function appendRecipeCard(recipe, lang, cardType) {
     let imgLink = $("<a href =recept.html?id="+recipe["id"]+"></a>");
     imgCol.append(imgLink);
 
-    let img = $("<img></img>").addClass("card-img").addClass("recipe-img").attr("src", "../img/chicken.jpg");
+    let img = $("<img></img>").addClass("card-img").addClass("recipe-img").attr("src", "../img/no-img.png");
     imgLink.append(img);
 
     let bodyCol = $("<div></div>").addClass("col-md-8");
@@ -119,22 +119,7 @@ function appendRecipeCard(recipe, lang, cardType) {
     $(target).append(card);
 }
 
-/*
-                <div class="comment">
-                    <div class="comment-body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Necessitatibus aperiam nisi illo rerum nostrum soluta minus ipsa omnis. Ut unde rerum
-                            praesentium quas quae dicta voluptatum animi cumque rem vero ratione itaque sed consequatur
-                            ab maxime, nesciunt quis, beatae cupiditate ducimus a soluta nobis possimus autem
-                            laboriosam? Veritatis, ipsam blanditiis!</p>
-                    </div>
-                    <div class="comment-details text-muted">
-                        <a href="#">Pileca krilca</a>, 05/06/2021
-                    </div>
-                </div>
- */
-
-function appendComment(comment, recipeName) {
+function appendComment(comment, recipe) {
     let commentDiv = $("<div class='comment'></div");
 
 
@@ -147,8 +132,8 @@ function appendComment(comment, recipeName) {
     let commentDetails = $("<div class='comment-details text-muted'></div>");
     commentDiv.append(commentDetails);
 
-    if (recipeName != undefined) {
-        let recipeUrl = $("<a href='#'></a>").html(recipeName);
+    if (recipe != undefined) {
+        let recipeUrl = $("<a href='recept.html?id=" + recipe.id + "'></a>").html(recipe.name);
         commentDetails.append(recipeUrl).append(", " + comment.date);
     }
     else {
