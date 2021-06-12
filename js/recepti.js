@@ -2,12 +2,19 @@ let recipes = localStorage.getItem("recipes");
 recipes = recipes == null ? data : JSON.parse(recipes);
 const numberPerPage = 5;
 
+let SRB = document.documentElement.lang == "rs";
+
 function displayContent(recipes, type, pageNum)
 {
     let displayNumber = 0;
     recipes.forEach(element => {
         if(displayNumber < (numberPerPage * pageNum) && displayNumber >= (numberPerPage * (pageNum-1)))
-            appendRecipeCard(element, "RS");
+        {
+            if(SRB)
+                appendRecipeCard(element, "RS");
+            else
+                appendRecipeCard(element, "EN");
+        }
         displayNumber++;
     });
     $("#curr").html(pageNum);
@@ -33,12 +40,18 @@ $(document).ready(function(){
     if(!params.has("type"))
         window.location.href = "index.html";
     let type = params.get("type");
-    document.title = "Bogdanov Kuvar - " + getRecipeType(type)["nameSRBP"];
+    if(SRB)
+        document.title = "Bogdanov Kuvar - " + getRecipeType(type)["nameSRBP"];
+    else
+        document.title = "Bogdan's Cookbook - " + getRecipeType(type)["nameENG"] + "s";
     let pageNum = 1;
     let sortBy = 0;
     let textFilter = "";
     let currRecipes = recipes.filter(element=>element["type"] == type && element["name"].includes(textFilter));
-    $(".breadcrumb").append("<li class='breadcrumb-item active'><a href='#' class='text-body'>" + types[type]["nameSRBP"] + "</a></li>");
+    if(SRB)
+        $(".breadcrumb").append("<li class='breadcrumb-item active'><a href='#' class='text-body'>" + types[type]["nameSRBP"] + "</a></li>");
+    else
+        $(".breadcrumb").append("<li class='breadcrumb-item active'><a href='#' class='text-body'>" + types[type]["nameENG"] + "s</a></li>");
     sortRecipes(currRecipes, sortBy);
     displayContent(currRecipes, type, pageNum);
 

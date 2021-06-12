@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="rs">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bogdanov Kuvar -</title>
+    <title>Bogdanov Kuvar - Početna</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
@@ -44,10 +44,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Početna</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Početna</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Recepti
                         </a>
@@ -85,48 +85,62 @@
     </nav>
 
     <div class="container content">
-        <div class="row pt-2">
-            <div class="col-lg-10 offset-lg-1">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html" class="text-muted">Početna</a></li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
         <div class="row">
-            <div class="col-9 col-lg-7 offset-lg-1">
-                <input id="searchText" class="w-100 h-100" type="text" placeholder="Pretraga">
+            <div class="col-lg-10 offset-lg-1 white-line">
+                <h1>Aktuelnosti</h1>
             </div>
-            <div class="col-1">
-                <button id="search" class="btn button-bogdan">Pretraži</button>
-            </div>
-            <div class="col-xl-2 offset-lg-1 offset-xl-0 mt-3 mt-xl-0">
-                Sortiraj po:&nbsp;
-                <select class="h-100">
-                    <option value="0" selected>Ocena</option>
-                    <option value="1">Tezina</option>
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1 white-line">
-                    <h1>Pretraga recepata</h1>
-                </div>
-                <div class="col-lg-10 offset-lg-1" id="recipes-col">
 
+            <div class="col-lg-5 offset-lg-1 news-card">
+                <div class="card">
+                    <a href="#"><img src="../img/trump.jpg" class="card-img-top"></a>
+                    <div class="card-body">
+                        <a href="#" class="text-reset">
+                            <h3 class="card-title">Tramp probao Bogdanov recept</h3>
+                        </a>
+                        <p class="card-text  mt-4">"Ovo je najbolji gulaš u istoriji gulaša, možda ikad", izjavio je bivši predsednik SAD za naš sajt.</p>
+                    </div>
                 </div>
             </div>
-            <nav class="arrows" aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li id="allBack" class="page-item"><a class="page-link" href="#">&Lt;</a></li>
-                    <li id="back" class="page-item"><a class="page-link" href="#">&LT;</a></li>
-                    <li class="page-item"><a id="curr" class="page-link" href="#">1</a></li>
-                    <li id="next" class="page-item"><a class="page-link" href="#">&GT;</a></li>
-                    <li id="allNext" class="page-item"><a class="page-link" href="#">&Gt;</a></li>
-                </ul>
-            </nav>
+            <div class="col-lg-5 news-card">
+                <div class="card">
+                    <a href="#"><img src="../img/obama.jpg" class="card-img-top"></a>
+                    <div class="card-body">
+                        <a href="#" class="text-reset">
+                            <h3 class="card-title">Obama probao Bogdanov recept</h3>
+                        </a>
+                        <p class="card-text  mt-4">"Почео сам ћирилицу да користим због овога", izjavio je bivši predsednik SAD za naš sajt.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1 news-card">
+                <div class="card">
+                    <a href="#"><img src="../img/gordon.jpg" class="card-img-top"></a>
+                    <div class="card-body">
+                        <a href="#" class="text-reset">
+                            <h3 class="card-title">Zašto Gordon Remzi ne zna da kuva</h3>
+                        </a>
+                        <p class="card-text  mt-4">Ove veštine Gordonu nedostaju koje naš korisnik Nikola, 40, poseduje.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 news-card">
+                <div class="card">
+                    <a href="#"><img src="../img/eifer.jpg" class="card-img-top"></a>
+                    <div class="card-body">
+                        <a href="#" class="text-reset">
+                            <h3 class="card-title">10 saveta za kuvanje francuskih jela</h3>
+                        </a>
+                        <p class="card-text  mt-4">Napravite baget iz snova, prema Bogdanovom iskustvu - deveti savet će vas oduševiti!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 white-line">
+                <h1>Najbolji recepti</h1>
+            </div>
+            <div class="col-lg-10 offset-lg-1" id="recipes-col">
+            </div>
         </div>
 
     </div>
@@ -147,7 +161,7 @@
                         <a href="#" class="text-reset">MySpace</a>
                     </div>
                     <div class="mb-2">
-                        <a href="#" class="text-reset">OnlyFans</a>
+                        <a href="#" class="text-reset">Instagram</a>
                     </div>
                 </div>
             </div>
@@ -167,7 +181,7 @@
     </div>
     <script src="../js/data.js"></script>
     <script src="../js/helperBoy.js"></script>
-    <script src="../js/recepti.js"></script>
+    <script src="../js/index.js"></script>
     <script src="../js/lang.js"></script>
 </body>
 

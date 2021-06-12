@@ -15,8 +15,14 @@ $(document).ready(function(){
     params = new URLSearchParams(window.location.search);
     if(!params.has("id"))
         window.location.href = "index.html";
+
+    let SRB = document.documentElement.lang == "rs";
+
     let currRecipes = recipes.filter(element => element["id"] == params.get("id"));
-    document.title = "Bogdanov Kuvar - " +  currRecipes[0]["name"];
+    if(SRB)
+        document.title = "Bogdanov Kuvar - " +  currRecipes[0]["name"];
+    else
+        document.title = "Bogdan's Cookbook - " +  currRecipes[0]["name"];
     if(currRecipes.length == 0 )
         window.location.href = "index.html";
     $("#rName").html(currRecipes[0]["name"]);
@@ -25,14 +31,20 @@ $(document).ready(function(){
     let avg = getAvg(currRecipes[0]);
     let timeLen = currRecipes[0]["time"];
     let dif = currRecipes[0]["difficulty"];
-    $("#typeOfFood").html(type["nameSRB"]);
+    if(SRB)
+        $("#typeOfFood").html(type["nameSRB"]);
+    else
+        $("#typeOfFood").html(type["nameENG"]);
     $("#aut").html(user["name"]);
     $("#lengthOfTime").html(timeLen+"<i class='fas fa-clock'></i>");
     $("#grade").html(avg.toFixed(1)+"/5.0<i class='fas fa-star'>");
     $("#dif").html(dif+"/5<i class='fas fa-book-dead'></i>");
     $("#recipeData").text(currRecipes[0]["recipe"]);
 
-    $(".breadcrumb").append("<li class='breadcrumb-item'><a href='recepti.html?type="+type["id"]+"' class='text-muted'>" + type["nameSRBP"] + "</a></li>");
+    if(SRB)
+        $(".breadcrumb").append("<li class='breadcrumb-item'><a href='recepti.html?type="+type["id"]+"' class='text-muted'>" + type["nameSRBP"] + "</a></li>");
+    else
+        $(".breadcrumb").append("<li class='breadcrumb-item'><a href='recepti_en.html?type="+type["id"]+"' class='text-muted'>" + type["nameENG"] + "s</a></li>");
     $(".breadcrumb").append("<li class='breadcrumb-item active'><a href='#' class='text-body'>" + currRecipes[0]["name"] + "</a></li>");
 
     let videoLink = currRecipes[0]["videoLinks"];

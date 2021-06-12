@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bogdan's Cookbook -</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+        integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+        integrity="undefined" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="undefined"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../img/bogdan.png">
+</head>
+
+<body>
+    <nav class="navbar navbar-light d-none d-sm-block bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="index_en.html"><img src="../img/bogdan.png" class="brand-img">
+                Bogdan's Cookbook
+            </a>
+        </div>
+
+    </nav>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand d-inline d-sm-none" href="index_en.html"><img src="../img/bogdan.png" class="brand-img">
+                Bogdan's Cookbook
+            </a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index_en.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Recipes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="recepti_en.html?type=0">Entrée</a></li>
+                            <li><a class="dropdown-item" href="recepti_en.html?type=1">Main course</a></li>
+                            <li><a class="dropdown-item" href="recepti_en.html?type=2">Dessert</a></li>
+                            <li><a class="dropdown-item" href="recepti_en.html?type=3">Snack</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dodaj_en.html" tabindex="-1" aria-disabled="true">Add recipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="o_nama_en.html" tabindex="-1" aria-disabled="true">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="moj_nalog_en.html" tabindex="-1" aria-disabled="true">My account</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                            <li><a class="dropdown-item" href="#" id="RS">RS</a></li>
+                            <li><a class="dropdown-item" href="#" id="EN">EN</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="pdf" class="container content">
+        <div class="row pt-2" id="bypassme4">
+            <div class="col-lg-10 offset-lg-1">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index_en.html" class="text-muted">Home</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row text-break">
+            <div class="col-lg-10 offset-lg-1 white-line">
+                <h1 id="rName"></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1" id="recipes-col">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="videoRow" class="row mt-3">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe id="video" class="embed-responsive-item slideshow-img" src="" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 white-line" style="margin-bottom: 0px;">
+                <h1>Recipe</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div id="bypassme1" class="col-12 col-lg-3 offset-lg-1"
+                style="border: 5px solid black; padding: 5px; border-top:0px solid black; height: 150px;">
+                <div style="display: flex;flex-direction: row;justify-content: space-around;">
+                    <p id="grade"></i></p>
+                    <p id="lengthOfTime"></p>
+                    <p id="dif"></p>
+                </div>
+                <div style="display: flex;flex-direction: row;justify-content: space-around;">
+                    <p id="typeOfFood">Recipe type</p>
+                    <p id="aut">Author</p>
+                </div>
+                <div style="display: flex;flex-direction: row;justify-content: space-around;">
+                    <span>
+                        Rating:
+                        <select id="selectedGrade">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </span>
+                    <button id="gradeB" class="btn button-bogdan">Rate it</button>
+                </div>
+                
+            </div>
+            <div class="col-12 col-lg-7">
+                <div id="recipeData">
+
+                </div>
+                <button id="getPDF" class="btn button-bogdan" style="float: right;">PDF</button>
+            </div>
+        </div>
+        <div id="bypassme2" class="row">
+            <div class="col-lg-10 offset-lg-1 white-line">
+                <h1>Comments</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <textarea id="comment" class="w-100" rows="5"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <button style="float:right;" id="commentB" class="btn button-bogdan">Submit</button>
+            </div>
+        </div>
+        <div id="bypassme3" class="row">
+            <div class="col-lg-10 offset-lg-1" id="comment-col">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light">
+        <div class="container pt-3">
+            <div class="row">
+                <div class="col-12 offset-lg-1 mb-5">
+                    <h1 class="mb-3">Also visit</h1>
+                    <div class="mb-2">
+                        <a href="https://tower-of-bogdan.vercel.app/" class="text-reset" target="_blank">Tower of
+                            Bogdan</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">Facebook</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">MySpace</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">Instagram</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 footer">
+                            Copyright 2021, Nemanja Mehović i Aleksandar Dinčić, Odsek za softversko inženjerstvo
+                            Elektrotehničkog fakulteta Univerziteta u Beogradu
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../js/data.js"></script>
+    <script src="../js/helperBoy.js"></script>
+    <script src="../js/recept.js"></script>
+    <script src="../js/lang.js"></script>
+</body>
+
+</html>

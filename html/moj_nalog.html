@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="rs">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bogdanov Kuvar - Dodaj recept</title>
+    <title>Bogdanov Kuvar - Moj nalog</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
@@ -59,7 +59,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="dodaj.html" tabindex="-1" aria-disabled="true">Dodaj recept</a>
+                        <a class="nav-link" href="dodaj.html" tabindex="-1" aria-disabled="true">Dodaj recept</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="o_nama.html" tabindex="-1" aria-disabled="true">O nama</a>
@@ -67,7 +67,8 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="moj_nalog.html" tabindex="-1" aria-disabled="true">Moj nalog</a>
+                        <a class="nav-link active" href="moj_nalog.html" tabindex="-1" aria-disabled="true">Moj
+                            nalog</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button"
@@ -90,86 +91,36 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html" class="text-muted">Početna</a></li>
-                        <li class="breadcrumb-item active"><a href="#" class="text-body">Dodaj recept</a></li>
+                        <li class="breadcrumb-item active"><a href="#" class="text-body">Moj nalog</a></li>
                     </ol>
                 </nav>
             </div>
         </div>
+
         <div class="row">
             <div class="col-lg-10 offset-lg-1 white-line">
-                <h1>Dodaj recept</h1>
+                <h1>Moji recepti</h1>
             </div>
-            <div class="col-lg-10 offset-lg-1" id="addForm">
-                <div class="row">
-                    <div class="col-lg-3 offset-lg-3">
-                        Ime recepta:
-                    </div>
-                    <div class="col-lg-3">
-                        <input class="float-lg-end" id="recipeName" type="text">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 offset-lg-3">
-                        Tip jela:
-                    </div>
-                    <div class="col-lg-3">
-                        <select class="float-lg-end" id="recipeType">
-                            <option value="0">Predjelo</option>
-                            <option value="1">Glavno jelo</option>
-                            <option value="2">Desert</option>
-                            <option value="3">Užina</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 offset-lg-3">
-                        Recept:
-                    </div>
-                    <div class="col-lg-3">
-                        <textarea class="float-lg-end" id="recipeData" cols="30" rows="10"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 offset-lg-3">
-                        Trajanje:
-                    </div>
-                    <div class="col-lg-3">
-                        <input class="float-lg-end" id="recipeLength" type="text">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 offset-lg-3">
-                        Težina:
-                    </div>
-                    <div class="col-lg-3">
-                        <select class="float-lg-end" id="recipeDif">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 offset-lg-3">
-                        Link za spremanje (opciono):
-                    </div>
-                    <div class="col-lg-3">
-                        <input class="float-lg-end" id="recipeLink" type="text">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-3">
-                        <button id="predaj" class="button-bogdan btn float-lg-end">Predaj</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-3">
-                        <p class="float-lg-end" id="errorAdd"></p>
-                    </div>
-                </div>
+
+            <div class="col-lg-10 offset-lg-1" id="recipes-col">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 white-line">
+                <h1>Moje ocene</h1>
+            </div>
+
+            <div class="col-lg-10 offset-lg-1" id="ratings-col">
+            </div>
+        </div>
+
+        <div class="row" style="padding-bottom: 10px;">
+            <div class="col-lg-10 offset-lg-1 white-line">
+                <h1>Moji komentari</h1>
+            </div>
+
+            <div class="col-lg-10 offset-lg-1" id="comment-col">
             </div>
         </div>
     </div>
@@ -190,7 +141,7 @@
                         <a href="#" class="text-reset">MySpace</a>
                     </div>
                     <div class="mb-2">
-                        <a href="#" class="text-reset">OnlyFans</a>
+                        <a href="#" class="text-reset">Instagram</a>
                     </div>
                 </div>
             </div>
@@ -208,9 +159,27 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" data-recipe="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Brisanje recepta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Da li sigurno želite da uklonite recept?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-delete" class="btn btn-danger">Ukloni</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../js/data.js"></script>
     <script src="../js/helperBoy.js"></script>
-    <script src="../js/dodaj.js"></script>
+    <script src="../js/moj_nalog.js"></script>
     <script src="../js/lang.js"></script>
 </body>
 

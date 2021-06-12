@@ -58,7 +58,7 @@ var data = [
             grade: 2
         }],
         time: 5,
-        difficulty: 0,
+        difficulty: 1,
         type: 3,
         recipe: "Ingredients \n1 cup cooked rice, warm \n1 pinch salt \n4 oz. Pepsi \n\nInstructions \nSeason rice with salt and pour Pepsi over it.",
         imageLinks: ["../img/recipes/pepsi-rice.jpg"],
@@ -169,7 +169,7 @@ var data = [
         difficulty: 3,
         type: 1,
         recipe: "Potrebni sastojci\npileća krilca - 12 komada\nza pohovanje\njaja - 2 komada\nsveže mleko - 250 ml\nkukuruzno brašno - 200 g\nkornfleks - pola pakovanja\nbujon - pola kocke, pileći\nza sos\nmajonez - 100 g\nkečap - 100 g\nsenf - 1 kašičica\nbiber\n\nNačin pripreme\nPileća krilca se operu i ostave da se ocede od vode. Kukuruzno brašno se sipa u posudu i pomeša sa namrvljenim pilećim bujonom.\nU drugoj posudu se sipa kornfleks samleven na krupne parčiće. U trećoj posudi se umute jaja i pomešaju sa svežim mlekom.\nOsušena krilca se potapaju u smesu od jaja, uvaljaju se u brašno, posle se opet potapaju u jaja i na kraju se uvaljaju u kornfleks. Sva krilca se prže u fritezi.\n",
-        imageLinks: ["../img/recipes/chicken-1.jpg", "../img/recipes/chicken-2.jpg"],
+        imageLinks: ["../img/recipes/chicken-1.jpg", "../img/recipes/chicken-2.jpeg"],
         videoLinks: "",
         comments: [
             {
@@ -266,7 +266,7 @@ Napomena:po želji preko mesa mogu se staviti 2 tvrdo obarena jaja i kuvana šar
     },
     {
         id: 7,
-        name: "Keks sa komadićima čokolade",
+        name: "Keks sa čokoladom",
         author: 3,
         grade: [{
             userID: 1,

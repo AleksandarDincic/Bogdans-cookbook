@@ -7,7 +7,6 @@ function getTop3Recipes() {
     let storedRecipes = localStorage.getItem("recipes");
     if (storedRecipes == null) {
         recipes = data;
-        localStorage.setItem("recipes", JSON.stringify(recipes));
     }
     else {
         recipes = JSON.parse(storedRecipes);
@@ -21,7 +20,8 @@ function getTop3Recipes() {
         return -(avg1 - avg2);
     });
 
+    let lang = document.documentElement.lang.toUpperCase();
     for (let i = 0; i < recipes.length && i < 3; ++i) {
-        appendRecipeCard(recipes[i], "RS");
+        appendRecipeCard(recipes[i], lang);
     }
 }

@@ -2,6 +2,8 @@ $(document).ready(function () {
     $("#predaj").click(function () {
         let recipes = localStorage.getItem("recipes");
         recipes = recipes == null ? data : JSON.parse(recipes);
+        
+        let SRB = document.documentElement.lang == "rs";
 
         $("#errorAdd").html("");
         let recipeName = $("#recipeName").val();
@@ -11,15 +13,24 @@ $(document).ready(function () {
         let recipeDif = $("#recipeDif").val();
         let recipeLink = $("#recipeLink").val();
         if (recipeName == "" || recipeType == "" || recipeData == "" || recipeLength == "" || recipeDif == "") {
-            $("#errorAdd").html("Sva polja su obavezna").css("color", "red");
+            if(SRB)
+                $("#errorAdd").html("Sva polja su obavezna").css("color", "red");
+            else
+                $("#errorAdd").html("All fields are mandatory").css("color", "red");
             return;
         }
         if (!/^[0-9]+$/.test(recipeLength)) {
-            $("#errorAdd").html("Duzina trajanja mora biti broj").css("color", "red");
+            if(SRB)
+                $("#errorAdd").html("Duzina trajanja mora biti broj").css("color", "red");
+            else
+                $("#errorAdd").html("Length must be a number").css("color", "red");
             return;
         }
         if (parseInt(recipeLength) <= 0) {
-            $("#errorAdd").html("Duzina trajanja mora biti broj veci od 0").css("color", "red");
+            if(SRB)
+                $("#errorAdd").html("Duzina trajanja mora biti broj veci od 0").css("color", "red");
+            else
+                $("#errorAdd").html("Length must be greater than 0").css("color", "red");
             return;
         }
         let max = 0;
@@ -42,6 +53,9 @@ $(document).ready(function () {
         }
         recipes.push(recept);
         localStorage.setItem("recipes", JSON.stringify(recipes));
-        $("#errorAdd").html("Recept uspešno dodat!").css("color", "green");
+        if(SRB)
+            $("#errorAdd").html("Recept uspešno dodat!").css("color", "green");
+        else
+            $("#errorAdd").html("Recipe successfully added!").css("color", "green");
     });
 });

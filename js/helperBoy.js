@@ -46,7 +46,12 @@ function appendRecipeCard(recipe, lang, cardType) {
     let recipeLeft = $("<div class='col-8'></div>");
     cardBodyRow.append(recipeLeft);
 
-    let titleLink = $("<a href =recept.html?id=" + recipe["id"] + "></a>").addClass("text-reset").addClass("text-decoration-none");
+    let titleLink;
+    if(lang == "RS")
+        titleLink = $("<a href =recept.html?id=" + recipe["id"] + "></a>").addClass("text-reset").addClass("text-decoration-none");
+    else
+        titleLink = $("<a href =recept_en.html?id=" + recipe["id"] + "></a>").addClass("text-reset").addClass("text-decoration-none");
+    
     let recipeName = $("<h1></h1>").addClass("card-title").html(recipe.name);
     titleLink.append(recipeName);
     let type = getRecipeType(recipe.type);
@@ -57,7 +62,7 @@ function appendRecipeCard(recipe, lang, cardType) {
     if (cardType != undefined) {
         switch (cardType) {
             case "user":
-                let removeButton = $("<button></button>").attr("data-recipe", recipe.id).addClass("btn").addClass("btn-danger").html("Ukloni");
+                let removeButton = $("<button></button>").attr("data-recipe", recipe.id).addClass("btn").addClass("btn-danger").html(lang == "EN" ? "Remove" : "Ukloni");
                 removeButton.click(function () {
                     $("#deleteModal").attr("data-recipe", recipe.id).modal('show');
                 });
@@ -138,7 +143,8 @@ function appendComment(comment, recipe) {
     commentDiv.append(commentDetails);
 
     if (recipe != undefined) {
-        let recipeUrl = $("<a href='recept.html?id=" + recipe.id + "'></a>").text(recipe.name);
+        let recipeFile = document.documentElement.lang == "en" ? "recept_en.html" : "recept.html";
+        let recipeUrl = $("<a href='" + recipeFile + "?id=" + recipe.id + "'></a>").text(recipe.name);
         commentDetails.append(recipeUrl).append(", " + comment.date);
     }
     else {

@@ -17,7 +17,6 @@ function getRecipes() {
     let storedRecipes = localStorage.getItem("recipes");
     if (storedRecipes == null) {
         recipes = data;
-        localStorage.setItem("recipes", JSON.stringify(recipes));
     }
     else {
         recipes = JSON.parse(storedRecipes);
@@ -31,8 +30,9 @@ function getUserRecipes() {
 
     let myRecipes = recipes.filter(e => e.author == 0);
 
+    let lang = document.documentElement.lang.toUpperCase();
     for (let i = 0; i < myRecipes.length; ++i) {
-        appendRecipeCard(myRecipes[i], "RS", "user");
+        appendRecipeCard(myRecipes[i], lang, "user");
     }
 }
 
@@ -41,8 +41,9 @@ function getUserRatings() {
 
     let ratedRecipes = recipes.filter(e => e.grade.some(ee => ee.userID == 0));
 
+    let lang = document.documentElement.lang.toUpperCase();
     for (let i = 0; i < ratedRecipes.length; ++i) {
-        appendRecipeCard(ratedRecipes[i], "RS", "rating");
+        appendRecipeCard(ratedRecipes[i], lang, "rating");
     }
 }
 
