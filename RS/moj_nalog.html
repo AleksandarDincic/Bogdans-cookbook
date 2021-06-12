@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bogdanov Kuvar - Moj nalog</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
@@ -20,6 +20,7 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../img/bogdan.png">
 </head>
 
 <body>
@@ -66,7 +67,18 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="moj_nalog.html" tabindex="-1" aria-disabled="true">Moj nalog</a>
+                        <a class="nav-link active" href="moj_nalog.html" tabindex="-1" aria-disabled="true">Moj
+                            nalog</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                            <li><a class="dropdown-item" href="#">RS</a></li>
+                            <li><a class="dropdown-item" href="#">EN</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -74,12 +86,12 @@
     </nav>
 
     <div class="container content">
-        <div class="row">
+        <div class="row pt-2">
             <div class="col-lg-10 offset-lg-1">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Početna</a></li>
-                        <li class="breadcrumb-item active"><a href="moj_nalog.html">Moj nalog</a></li>
+                        <li class="breadcrumb-item"><a href="index.html" class="text-muted">Početna</a></li>
+                        <li class="breadcrumb-item active"><a href="#" class="text-body">Moj nalog</a></li>
                     </ol>
                 </nav>
             </div>
@@ -114,46 +126,57 @@
     </div>
 
     <div class="container-fluid bg-light">
-        <div class="container">
+        <div class="container pt-3">
             <div class="row">
-                <div class="col-4">
-                    <h2>Also visit</h2>
-                    <br>
-                    <a href="https://tower-of-bogdan.vercel.app/" target="_blank">Tower of Bogdan</a>
+                <div class="col-12 offset-lg-1 mb-5">
+                    <h1 class="mb-3">Takođe posetite</h1>
+                    <div class="mb-2">
+                        <a href="https://tower-of-bogdan.vercel.app/" class="text-reset" target="_blank">Tower of
+                            Bogdan</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">Facebook</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">MySpace</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">OnlyFans</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-
-    <div class="container-fluid bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 footer">
-                    Copyright 2021 nikola mehovic i dinca etf idk
+            <div class="container-fluid bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 footer">
+                            Copyright 2021, Nemanja Mehović i Aleksandar Dinčić, Odsek za softversko inženjerstvo
+                            Elektrotehničkog fakulteta Univerziteta u Beogradu
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
-
     </div>
 
     <div class="modal fade" id="deleteModal" tabindex="-1" data-recipe="-1">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Brisanje recepta</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Brisanje recepta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    Da li sigurno želite da uklonite recept?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btn-delete" class="btn btn-danger">Ukloni</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
+                </div>
             </div>
-            <div class="modal-body">
-              Da li sigurno želite da uklonite recept?
-            </div>
-            <div class="modal-footer">
-              <button type="button" id ="btn-delete" class="btn btn-danger">Ukloni</button>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Odustani</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
     <script src="../js/data.js"></script>
     <script src="../js/helperBoy.js"></script>
     <script src="../js/moj_nalog.js"></script>

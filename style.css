@@ -91,3 +91,15 @@ body{
     height: 450px;
     object-fit: cover;
 }
+
+a{
+    text-decoration: none;
+}
+
+#addForm .row{
+    margin-top: 10px;
+}
+
+#recipeData{
+    white-space:pre-wrap;
+}

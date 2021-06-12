@@ -10,7 +10,7 @@ $(document).ready(function () {
         let recipeLength = $("#recipeLength").val();
         let recipeDif = $("#recipeDif").val();
         let recipeLink = $("#recipeLink").val();
-        if (recipeName == "" || recipeType == "" || recipeData == "" || recipeLength == "" || recipeDif == "" || recipeLink == "") {
+        if (recipeName == "" || recipeType == "" || recipeData == "" || recipeLength == "" || recipeDif == "") {
             $("#errorAdd").html("Sva polja su obavezna").css("color", "red");
             return;
         }
@@ -42,5 +42,6 @@ $(document).ready(function () {
         }
         recipes.push(recept);
         localStorage.setItem("recipes", JSON.stringify(recipes));
+        $("#errorAdd").html("Recept uspešno dodat!").css("color", "green");
     });
 });

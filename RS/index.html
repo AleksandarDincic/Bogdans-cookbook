@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bogdanov Kuvar - Početna</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
@@ -20,6 +20,7 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../img/bogdan.png">
 </head>
 
 <body>
@@ -68,6 +69,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="moj_nalog.html" tabindex="-1" aria-disabled="true">Moj nalog</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                            <li><a class="dropdown-item" href="#">RS</a></li>
+                            <li><a class="dropdown-item" href="#">EN</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -81,41 +92,45 @@
 
             <div class="col-lg-5 offset-lg-1 news-card">
                 <div class="card">
-                    <img src="../img/trump.jpg" class="card-img-top">
+                    <a href="#"><img src="../img/trump.jpg" class="card-img-top"></a>
                     <div class="card-body">
-                        <h5 class="card-title">Tramp probao Bogdanov recept</h5>
-                        <p class="card-text">Najeo se ko stoka</p>
-                        <a href="#">Pročitajte više...</a>
+                        <a href="#" class="text-reset">
+                            <h3 class="card-title">Tramp probao Bogdanov recept</h3>
+                        </a>
+                        <p class="card-text  mt-4">"Ovo je najbolji gulaš u istoriji gulaša, možda ikad", izjavio je bivši predsednik SAD za naš sajt.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 news-card">
                 <div class="card">
-                    <img src="../img/obama.jpg" class="card-img-top">
+                    <a href="#"><img src="../img/obama.jpg" class="card-img-top"></a>
                     <div class="card-body">
-                        <h5 class="card-title">Obama probao Bogdanov recept</h5>
-                        <p class="card-text">Najeo se ko stoka</p>
-                        <a href="#">Pročitajte više...</a>
+                        <a href="#" class="text-reset">
+                            <h3 class="card-title">Obama probao Bogdanov recept</h3>
+                        </a>
+                        <p class="card-text  mt-4">"Почео сам ћирилицу да користим због овога", izjavio je bivši predsednik SAD na naš sajt.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1 news-card">
                 <div class="card">
-                    <img src="../img/beach.jpg" class="card-img-top">
+                    <a href="#"><img src="../img/gordon.jpg" class="card-img-top"></a>
                     <div class="card-body">
-                        <h5 class="card-title">Bogdan otisao da pliva</h5>
-                        <p class="card-text">Udavio se</p>
-                        <a href="#">Pročitajte više...</a>
+                        <a href="#" class="text-reset">
+                            <h3 class="card-title">Zašto Gordon Remzi ne zna da kuva</h3>
+                        </a>
+                        <p class="card-text  mt-4">Ove veštine Gordonu nedostaju koje naš korisnik Nikola, 40, poseduje.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 news-card">
                 <div class="card">
-                    <img src="../img/hanakin.png" class="card-img-top">
+                    <a href="#"><img src="../img/eifer.jpg" class="card-img-top"></a>
                     <div class="card-body">
-                        <h5 class="card-title">Joe Biden</h5>
-                        <p class="card-text">Joe Biden</p>
-                        <a href="#">Joe Biden</a>
+                        <a href="#" class="text-reset">
+                            <h3 class="card-title">10 saveta za kuvanje francuskih jela</h3>
+                        </a>
+                        <p class="card-text  mt-4">Napravite baget iz snova, prema Bogdanovom iskustvu - deveti savet će vas oduševiti!</p>
                     </div>
                 </div>
             </div>
@@ -124,34 +139,45 @@
             <div class="col-lg-10 offset-lg-1 white-line">
                 <h1>Best recipes ever</h1>
             </div>
-            <div class="col-lg-10 offset-lg-1"  id="recipes-col">
+            <div class="col-lg-10 offset-lg-1" id="recipes-col">
             </div>
         </div>
 
     </div>
 
     <div class="container-fluid bg-light">
-        <div class="container">
+        <div class="container pt-3">
             <div class="row">
-                <div class="col-4">
-                    <h2>Also visit</h2>
-                    <br>
-                    <a href="https://tower-of-bogdan.vercel.app/" target="_blank">Tower of Bogdan</a>
+                <div class="col-12 offset-lg-1 mb-5">
+                    <h1 class="mb-3">Takođe posetite</h1>
+                    <div class="mb-2">
+                        <a href="https://tower-of-bogdan.vercel.app/" class="text-reset" target="_blank">Tower of
+                            Bogdan</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">Facebook</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">MySpace</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">OnlyFans</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-
-    <div class="container-fluid bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 footer">
-                    Copyright 2021 nikola mehovic i dinca etf idk
+            <div class="container-fluid bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 footer">
+                            Copyright 2021, Nemanja Mehović i Aleksandar Dinčić, Odsek za softversko inženjerstvo
+                            Elektrotehničkog fakulteta Univerziteta u Beogradu
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
-
     </div>
     <script src="../js/data.js"></script>
     <script src="../js/helperBoy.js"></script>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bogdanov Kuvar - O nama</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
@@ -20,6 +20,7 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../img/bogdan.png">
 </head>
 
 <body>
@@ -43,7 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Početna</a>
+                        <a class="nav-link" aria-current="page" href="index.html">Početna</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -68,37 +69,57 @@
                     <li class="nav-item">
                         <a class="nav-link" href="moj_nalog.html" tabindex="-1" aria-disabled="true">Moj nalog</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                            <li><a class="dropdown-item" href="#">RS</a></li>
+                            <li><a class="dropdown-item" href="#">EN</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container content">
+        <div class="row pt-2">
+            <div class="col-lg-10 offset-lg-1">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-muted">Početna</a></li>
+                        <li class="breadcrumb-item active"><a href="#" class="text-body">O nama</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
         <div class="row mb-lg-5">
             <div class="col-lg-10 offset-lg-1 white-line">
                 <h1>Ko je Bogdan?</h1>
             </div>
 
             <div class="col-lg-7 offset-lg-1">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat quisquam cum eaque officiis
-                repellendus quod earum accusamus nobis voluptas ipsa dolorum ea, excepturi delectus facere iusto qui
-                doloribus officia quam odio dignissimos veniam quae fugiat itaque. Laboriosam ratione voluptas
-                aperiam eaque earum repudiandae dolore harum quo quibusdam eveniet commodi soluta culpa illo facilis
-                vitae minima error incidunt, quas at autem voluptate quae voluptatibus consequatur dolor! Cumque
-                expedita omnis praesentium velit ipsam id provident architecto assumenda dolorem eveniet! Cum ex vel
-                expedita, eius voluptate nobis facilis. Quaerat tempore ad magnam illo nostrum dignissimos hic
-                distinctio. Quos hic blanditiis possimus ullam quis optio necessitatibus deserunt quod iusto et.
-                Dignissimos officiis qui, quod illum architecto voluptates. Cumque, libero eius? Cupiditate sunt
-                atque itaque nobis placeat dolorem nostrum, in sint perferendis voluptate. Expedita dolorum
-                doloribus sapiente odit. Tenetur nulla, dolores quaerat provident facilis voluptatem accusamus
-                laborum. Itaque quasi commodi, dolor, nobis maiores quisquam repellendus accusantium numquam
-                suscipit amet eaque dicta dolore perspiciatis exercitationem laudantium obcaecati doloremque
-                expedita sunt magnam temporibus at, necessitatibus quod. A eos illo aspernatur quibusdam facilis
-                eveniet, atque esse sunt deserunt!
+                <p>
+                    Mačku sa ovim imenom istoričari vezuju sa mitovima starih Egipćana - njoj u čast su držani rituali
+                    vezani za
+                    hranu, čitava dinastija dvorskih kuvara nosi njen naziv, a u Tutankamonovoj grobnici pronađena je
+                    Jugio karta sa njenim likom. Stoga nije slučajnost što se mačak izvesnog M.P. iz Valjeva, koji je
+                    iskazao izuzetnu strast prema umetnosti kuvanja (uglavnom konzumiranju njenih plodova), upravo zove
+                    - Bogdan.
+                </p>
+                <p>
+                    Naš cilj je privući novopečene i iskusne kuvare, i dati im mesto gde mogu da rade na sebi i pomažu
+                    drugima. Stoga, nije nam bilo teško da, uz dozvolu vlasnika (nismo ga pitali, ali bi sigurno
+                    pristao), izaberemo Bogdana kao maskotu našeg sajta, u nadi da će njegova veličantvena pojava i
+                    entuzijazam osvojiti što više korisnika.
+                </p>
             </div>
             <div class="col-lg-3">
-                <img src="../img/hanakin.png" class="img-fluid img-thumbnail">
-                <p style="text-align: center;">Ovo nije Bogdan</p>
+                <img src="../img/bogdan.jpg" class="img-fluid img-thumbnail">
+                <p style="text-align: center; font-style: italic;" class="text-muted">Bogdan na svom tronu</p>
             </div>
 
         </div>
@@ -115,18 +136,19 @@
             </div>
             <div class="col-lg-7">
                 <p>
-                    Ukoliko želite da unapredite svoje kulinarsko umeće - na pravom ste mestu. Nudimo vam recepte
-                    nastalih iz mašte našeg mačijeg drugara, ili neke od mnogobrojnih koje su okačili naši korisnici. A
+                    Ukoliko želite da unapredite svoje kulinarsko umeće - na pravom ste mestu. Nudimo vam mnogobrojne
+                    recepte različitih vrsta jela i nivoa težine, koje su okačili naši korisnici. A
                     kada se oprobate, pokažite nam vaše pokušaje - ili okačite neku svoju originalnu kreaciju - i
                     dobićete
                     korisne savete iskusnijih ljubitelja kuvanja. Naša zajednica je strastvena, iskrena, i neće se
                     ustručavati
                     da vam kaže da vašom hranom ne bi ni kučiće hranili (a ni mačiće, što vam Bogdan može potvrditi).
                     Konstruktivnim kriticizmom i kreativnim idejama, i Vi možete dostići nivo veštine u kuhinji o kakvom
-                    ne biste ni sanjali.
+                    niste mogli ni da sanjate.
                 </p>
                 <p>
-                    Ukoliko i dalje niste sigurni, možda će vam sledeći podaci promeniti mišljenje: U anketi sprovedenoj
+                    Ukoliko i dalje niste sigurni, možda će vam sledeći podatak promeniti mišljenje: U anketi
+                    sprovedenoj
                     29. aprila 2021. godine, čak 92% korisnika Bogdanovog kuvara je prezadovoljno svojim kuvanjem, a 86%
                     smatra sebe
                     najboljim kuvarom za koga su čuli. Ovakav nivo (kompletno opravdanog) samopouzdanja vam nijedan
@@ -143,16 +165,19 @@
                 <h1>Kako do nas?</h1>
             </div>
 
-            <div class="col-lg-5 offset-lg-1 mt-2">
-                Posetite našu adresu, ili nas pozovite na broj:
+            <div class="col-lg-5 offset-lg-1 mt-2 mb-4">
+                <b>Posetite našu adresu</b>
                 <hr>
                 Elektrotehnički fakultet <br>
                 Bulevar kralja Aleksandra 73 <br>
                 11000 Beograd <br>
                 <br>
+                <b>Ili nas pozovite na broj</b>
+                <hr>
                 +3816666669
+                <br>
             </div>
-            <div class="col-lg-5 mt-2">
+            <div class="col-lg-5 mt-2 mb-4">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000.8280237560496!2d20.475973894667952!3d44.80589350286099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7a9f59af917f%3A0xf9b50e9f0114cb72!2sElektrotehni%C4%8Dki%20fakultet%2C%2073%2C%20Beograd!5e0!3m2!1sen!2srs!4v1623435672088!5m2!1sen!2srs"
                     width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -161,27 +186,38 @@
     </div>
 
     <div class="container-fluid bg-light">
-        <div class="container">
+        <div class="container pt-3">
             <div class="row">
-                <div class="col-4">
-                    <h2>Also visit</h2>
-                    <br>
-                    <a href="https://tower-of-bogdan.vercel.app/" target="_blank">Tower of Bogdan</a>
+                <div class="col-12 offset-lg-1 mb-5">
+                    <h1 class="mb-3">Takođe posetite</h1>
+                    <div class="mb-2">
+                        <a href="https://tower-of-bogdan.vercel.app/" class="text-reset" target="_blank">Tower of
+                            Bogdan</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">Facebook</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">MySpace</a>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-reset">OnlyFans</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-
-    <div class="container-fluid bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 footer">
-                    Copyright 2021 nikola mehovic i dinca etf idk
+            <div class="container-fluid bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 footer">
+                            Copyright 2021, Nemanja Mehović i Aleksandar Dinčić, Odsek za softversko inženjerstvo
+                            Elektrotehničkog fakulteta Univerziteta u Beogradu
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
-
     </div>
 </body>
 

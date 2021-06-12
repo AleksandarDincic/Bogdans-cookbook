@@ -33,11 +33,12 @@ $(document).ready(function(){
     if(!params.has("type"))
         window.location.href = "index.html";
     let type = params.get("type");
+    document.title = "Bogdanov Kuvar - " + getRecipeType(type)["nameSRBP"];
     let pageNum = 1;
     let sortBy = 0;
     let textFilter = "";
     let currRecipes = recipes.filter(element=>element["type"] == type && element["name"].includes(textFilter));
-    $(".breadcrumb").append("<li class='breadcrumb-item active'><a href='#'>" + types[type]["nameSRBP"] + "</a></li>");
+    $(".breadcrumb").append("<li class='breadcrumb-item active'><a href='#' class='text-body'>" + types[type]["nameSRBP"] + "</a></li>");
     sortRecipes(currRecipes, sortBy);
     displayContent(currRecipes, type, pageNum);
 
@@ -70,8 +71,8 @@ $(document).ready(function(){
     });
 
     $("#search").click(function(){
-        textFilter = $("#searchText").val();
-        currRecipes = recipes.filter(element=>element["type"] == type && element["name"].includes(textFilter));
+        textFilter = $("#searchText").val().toLowerCase().trim();
+        currRecipes = recipes.filter(element=>element["type"] == type && element["name"].toLowerCase().includes(textFilter));
         sortRecipes(currRecipes, sortBy);
         $("#recipes-col").html("");
         pageNum = 1;

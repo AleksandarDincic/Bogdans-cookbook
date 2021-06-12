@@ -26,22 +26,27 @@ function appendRecipeCard(recipe, lang, cardType) {
     let imgCol = $("<div></div>").addClass("col-md-4");
     innerRow.append(imgCol);
 
-    let imgLink = $("<a href =recept.html?id="+recipe["id"]+"></a>");
+    let imgLink = $("<a href =recept.html?id=" + recipe["id"] + "></a>");
     imgCol.append(imgLink);
 
-    let img = $("<img></img>").addClass("card-img").addClass("recipe-img").attr("src", "../img/no-img.png");
+    let imgPath = recipe.imageLinks.length > 0 ? recipe.imageLinks[0] : "../img/no-img.png";
+
+    let img = $("<img></img>").addClass("card-img").addClass("recipe-img").attr("src", imgPath);
     imgLink.append(img);
 
     let bodyCol = $("<div></div>").addClass("col-md-8");
     innerRow.append(bodyCol);
 
-    let cardBody = $("<div></div>").addClass("card-body");
+    let cardBody = $("<div class='container-fluid'></div>").addClass("card-body");
     bodyCol.append(cardBody);
 
-    let recipeLeft = $("<div></div>").addClass("recipe-left");
-    cardBody.append(recipeLeft);
+    let cardBodyRow = $("<div class='row no-gutters'></div>");
+    cardBody.append(cardBodyRow);
 
-    let titleLink = $("<a href =recept.html?id="+recipe["id"]+"></a>").addClass("text-reset").addClass("text-decoration-none");
+    let recipeLeft = $("<div class='col-8'></div>");
+    cardBodyRow.append(recipeLeft);
+
+    let titleLink = $("<a href =recept.html?id=" + recipe["id"] + "></a>").addClass("text-reset").addClass("text-decoration-none");
     let recipeName = $("<h1></h1>").addClass("card-title").html(recipe.name);
     titleLink.append(recipeName);
     let type = getRecipeType(recipe.type);
@@ -94,8 +99,8 @@ function appendRecipeCard(recipe, lang, cardType) {
     }
 
 
-    let recipeRight = $("<div></div>").addClass("recipe-right");
-    cardBody.append(recipeRight);
+    let recipeRight = $("<div class='col-4'></div>").addClass("recipe-right");
+    cardBodyRow.append(recipeRight);
 
     let rating = $("<p></p>").addClass("card-text");
     let ratingIcon = $("<i></i>").addClass("fas").addClass("fa-star");
@@ -125,20 +130,20 @@ function appendComment(comment, recipe) {
 
     let commentBody = $("<div class='comment-body'></div>");
     commentDiv.append(commentBody);
-    
-    let commentBodyP = $("<p></p>").html(comment.text);
+
+    let commentBodyP = $("<p></p>").text(comment.text);
     commentBody.append(commentBodyP);
 
     let commentDetails = $("<div class='comment-details text-muted'></div>");
     commentDiv.append(commentDetails);
 
     if (recipe != undefined) {
-        let recipeUrl = $("<a href='recept.html?id=" + recipe.id + "'></a>").html(recipe.name);
+        let recipeUrl = $("<a href='recept.html?id=" + recipe.id + "'></a>").text(recipe.name);
         commentDetails.append(recipeUrl).append(", " + comment.date);
     }
     else {
-        let user = getUserName(comment.userID);
-        commentDetails.append(user + ", " + comment.data);
+        let user = getUserName(comment.userID).name;
+        commentDetails.append(user + ", " + comment.date);
     }
 
     $("#comment-col").append(commentDiv);
