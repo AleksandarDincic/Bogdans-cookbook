@@ -21,7 +21,7 @@ var types = [
     {
         id: 0,
         nameSRB: "Predjelo",
-        nameENG: "Appetizer",
+        nameENG: "Entrée",
         nameSRBP: "Predjela"
     },
     {
